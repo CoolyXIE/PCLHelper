@@ -99,6 +99,7 @@ void DownSampleRadius(CloudXYZ::Ptr cloud, double radius);
 void DownSampleNormalSpace(CloudNML::Ptr cloud, double ratio);
 
 /// Smooth PointCloud
+// TODO: MLS, BilateralFilter, GaussDeblur, 
 
 
 /// Segment PointCloud

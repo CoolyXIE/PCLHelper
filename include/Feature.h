@@ -11,6 +11,19 @@ void flipNormals(CloudNML::Ptr cloud);
 template <typename PtT>
 Eigen::Vector3d computeCentroid(const pcl::PointCloud<PtT>& cloud);
 
+/// Curvatures
+
+/// PFH & FPFH
+
+/// NRAF
+
+/// SHOT
+
+/// ShapeContext
+
+class DescriptorMatcher {
+
+};
 
 
 
