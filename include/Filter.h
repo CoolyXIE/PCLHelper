@@ -3,7 +3,7 @@
 
 #include <pcl/filters/extract_indices.h>
 #include <pcl/filters/voxel_grid.h>
-
+#include <pcl/recognition/linemod/line_rgbd.h>
 /// Extract Indices of PointCloud
 typedef pcl::BoundingBoxXYZ Box;
 

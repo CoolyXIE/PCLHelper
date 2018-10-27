@@ -31,12 +31,12 @@ void test_filter()
 
 }
 
-void main(int argc, char** argv)
+int main(int argc, char** argv)
 {
-	//test_camera();
+	test_camera();
 
-	test_filter();
+	//test_filter();
 
 	getchar();
-	return;
+	return 0;
 }
