@@ -1,30 +1,35 @@
 #include "Headers.h"
+#include <pcl/search/kdtree.h>
 
-/// Normals
-void computeNormals(CloudNML::Ptr cloud, int k);
+namespace cooly
+{
+    /// Normals
+    pcl::PointCloud<pcl::Normal>::Ptr
+    computeNormals(CloudXYZ::Ptr cloud, int k);
 
-void reorientNormals(CloudNML::Ptr cloud, int k);
+    // Reorient normals to keep consistency
+    void reorientNormals(CloudNML::Ptr cloud, int k);
 
-void flipNormals(CloudNML::Ptr cloud);
+    void flipNormals(CloudNML::Ptr cloud);
 
-/// Centroid
-template <typename PtT>
-Eigen::Vector3d computeCentroid(const pcl::PointCloud<PtT>& cloud);
+    /// Centroid
+    template <typename PtT>
+    Eigen::Vector3d computeCentroid(const pcl::PointCloud<PtT>& cloud);
 
-/// Curvatures
+    /// Curvatures
 
-/// PFH & FPFH
+    /// PFH & FPFH
 
-/// NRAF
+    /// NRAF
 
-/// SHOT
+    /// SHOT
 
-/// ShapeContext
+    /// ShapeContext
 
-class DescriptorMatcher {
+    class DescriptorMatcher {
 
-};
+    };
 
-
+}
 
 

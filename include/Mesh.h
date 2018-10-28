@@ -1,16 +1,21 @@
 #pragma once
 #include "Headers.h"
 
-std::vector<Eigen::Vector3f> PlaneCutMesh(const Mesh& mesh, Eigen::Vector4f Plane);
+namespace cooly
+{
 
-// Convex Hull
-Mesh ConvexHull(CloudXYZ::Ptr cloud);
+    std::vector<Eigen::Vector3f> PlaneCutMesh(const Mesh& mesh, Eigen::Vector4f Plane);
 
-Mesh PoissonReconstruct(CloudNML::Ptr cloud);
+    // Convex Hull
+    Mesh ConvexHull(CloudXYZ::Ptr cloud);
 
-// Poisson Reconstruct With Colors
-Mesh PoissonReconstruct(CloudALL::Ptr cloud);
+    Mesh PoissonReconstruct(CloudNML::Ptr cloud);
 
-Mesh MarchingCubeReconstruct(CloudNML::Ptr cloud);
+    // Poisson Reconstruct With Colors
+    Mesh PoissonReconstruct(CloudALL::Ptr cloud);
 
-Mesh GreedyProjectionTriangulation(CloudNML::Ptr cloud):
+    Mesh MarchingCubeReconstruct(CloudNML::Ptr cloud);
+
+    Mesh GreedyProjectionTriangulation(CloudNML::Ptr cloud):
+
+}

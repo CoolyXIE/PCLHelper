@@ -12,17 +12,21 @@
 #include <pcl/point_cloud.h>
 #include <pcl/PolygonMesh.h>
 
-typedef pcl::PointXYZ			PtXYZ;
-typedef pcl::PointXYZRGB		PtRGB;
-typedef pcl::PointNormal		PtNML;
-typedef pcl::PointXYZRGBNormal	PtALL;
 
-typedef pcl::PointCloud<PtXYZ>	CloudXYZ;
-typedef pcl::PointCloud<PtRGB>	CloudRGB;
-typedef pcl::PointCloud<PtNML>	CloudNML;
-typedef pcl::PointCloud<PtALL>	CloudALL;
+namespace cooly
+{
+    typedef pcl::PointXYZ			PtXYZ;
+    typedef pcl::PointXYZRGB		PtRGB;
+    typedef pcl::PointNormal		PtNML;
+    typedef pcl::PointXYZRGBNormal	PtALL;
 
-typedef pcl::PolygonMesh		Mesh;
+    typedef pcl::PointCloud<PtXYZ>	CloudXYZ;
+    typedef pcl::PointCloud<PtRGB>	CloudRGB;
+    typedef pcl::PointCloud<PtNML>	CloudNML;
+    typedef pcl::PointCloud<PtALL>	CloudALL;
 
-enum PtType {XYZ, RGB, NORMAL, ALL};
-enum Axis {X, Y, Z};
+    typedef pcl::PolygonMesh		Mesh;
+
+    enum PtType {XYZ, RGB, NORMAL, ALL};
+    enum Axis {X, Y, Z};
+}

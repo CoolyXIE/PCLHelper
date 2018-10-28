@@ -1,10 +1,13 @@
 #include "Headers.h"
 #include "Camera.h"
-#include "Filter.h"
+#include "Feature.h"
 #include <pcl/io/ply_io.h>
+#include <pcl/io/vtk_lib_io.h>
 
-using namespace pcl;
+
 using namespace std;
+using namespace pcl;
+using namespace cooly;
 
 void test_camera()
 {
@@ -13,30 +16,24 @@ void test_camera()
 	std::cout << K << std::endl;
 }
 
-void test_filter()
+void test_normal()
 {
-	string bodyPLYPath = "../test/data/humanbody.ply";
+	string bunny_file = "../data/bunny/bunny.ply";
+	CloudXYZ::Ptr cloud(new CloudXYZ);
+	io::loadPLYFile(bunny_file, *cloud);
+    auto normals = computeNormals(cloud, 30);
 
-	CloudALL::Ptr cloud(new CloudALL);
-	pcl::io::loadPLYFile(bodyPLYPath, *cloud);
-
-	int n = 100;
-	vector<int> indices;
-	for (int i = 0; i < n; i++)
-		indices.push_back(i);
-
-	std::cout << "Before:\t" << cloud->points.size() << std::endl;
-	auto outCloud = RemovePoints<PtALL>(*cloud, indices, false);
-	std::cout << "After:\t" << outCloud.points.size() << std::endl;
+    CloudNML::Ptr cloud_normals(new CloudNML);
+    pcl::concatenateFields(*cloud, *normals, *cloud_normals);
+    io::savePLYFile("../data/bunny/bunny_with_normals.ply", *cloud_normals);
 
 }
 
 int main(int argc, char** argv)
 {
-	test_camera();
+	//test_camera();
 
-	//test_filter();
+	test_normal();
 
-	getchar();
 	return 0;
 }

@@ -1,21 +1,25 @@
 #include "Headers.h"
 
-class KdTree {
+namespace cooly
+{
+    class KdTree {
 
-};
+    };
 
-class OcTree {
+    class OcTree {
 
-};
+    };
 
-class MinSpanTree {
+    class MinSpanTree {
 
-};
+    };
 
-class BinaryTree {
+    class BinaryTree {
 
-};
+    };
 
-class RedBlackTree {
+    class RedBlackTree {
 
-};
+    };
+}
+
